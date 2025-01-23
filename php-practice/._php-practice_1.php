@@ -1,5 +1,5 @@
 Q1.
-$name = ['土居','doi'];
+$name = '土居';
 
 if($name = '土居'){
   echo '私の名前は「'.$name.'」です。';
@@ -19,20 +19,14 @@ $date = date("Y年m月d日 H時i分s秒");
 echo "現在時刻は、".$date." です。"
 
 Q4.
-$device = "mac";
+$device = "windows";
 
-if ($device === "windows"){
-    echo "使用OSは、windowsです。";
-
-    }else {
-  if ($device === "mac"){
-    echo "使用OSは、macです。";
-
-    }else {
+if ($device === "windows" || $device === "mac"){
+    echo "使用OSは、'$device'です。";
+    }else{
     echo "どちらでもありません。";
-
-    }
   }
+
 
 
 Q5.
@@ -67,26 +61,11 @@ foreach ($kantou as $y){
 Q8.
 $place = "埼玉県";
 
-if ($place === "東京都"){
-  echo $kantou['shinjuku'];}
-
-  elseif ($place === "神奈川県"){
-  echo $kantou['yokohama'];}
-
-  elseif ($place === "千葉県"){
-  echo $kantou['chiba'];}
-
-  elseif ($place === "埼玉県"){
-  echo $kantou['saitama'];}
-
-  elseif ($place === "栃木県"){
-  echo $kantou['utsunomiya'];}
-
-  elseif ($place === "群馬県"){
-  echo $kantou['maebashi'];}
-
-  elseif ($place === "茨城県"){
-  echo $kantou['mito'];}
+foreach($kantou as $place => $shichoson){
+  if($place === "埼玉県"){
+    echo $place."の県庁所在地は、".$shichoson."です。";
+  }
+}
 
 Q9.
 $kantou["愛知県"] = "愛知県";
@@ -106,8 +85,9 @@ foreach($kantou as $x => $y)
 
 
 Q10.
-function hello($name)
-{return $name."さん、こんにちは。";}
+function hello($name){
+return $name."さん、こんにちは。";
+}
 
 echo hello("金谷")."\n";
 echo hello("安藤")."\n";
